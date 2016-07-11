@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => {
-	return <div>All Blog Posts</div>;
-};
+class PostsIndex extends Component {
+	render() {
+		return (
+			<div>All blog posts</div>
+		);
+	}
+}
+
+export default PostsIndex;
