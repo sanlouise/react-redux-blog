@@ -9,6 +9,5 @@ export function fetchPosts (id) {
 	return {
 		type: FETCH_POSTS,
 		payload: request
-
 	};
 }
