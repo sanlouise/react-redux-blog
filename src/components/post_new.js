@@ -3,8 +3,9 @@ import { reduxForm } from 'redux-form';
 
 class PostNew extends Component {
 	render() {
+		const { handleSubmit } = this.props;
 		return (
-			<form>
+			<form onSubmit={handleSubmit}>
 				<h4>Create a post</h4>
 				<div className="form-group">
 					<label>Title</label>
@@ -20,6 +21,9 @@ class PostNew extends Component {
 					<label>Body</label>
 					<textarea className="form-control" />
 				</div>
+
+				<button type="submit" className="btn btn-primary">Submit</button>
+
 			</form>
 		);
 	}
