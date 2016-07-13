@@ -12,7 +12,7 @@ class PostNew extends Component {
 					<label>Title</label>
 					<input type="text" className="form-control" {...title} />
 					<div className="text-help">
-						{title.error}
+						{title.touched? title.error : ''}
 					</div>
 				</div>
 
@@ -20,7 +20,7 @@ class PostNew extends Component {
 					<label>Categories</label>
 					<input type="text" className="form-control" {...categories} />
 					<div className="text-help">
-						{categories.error}
+						{categories.touched ? categories.error : ''}
 					</div>
 				</div>
 
@@ -28,7 +28,7 @@ class PostNew extends Component {
 					<label>Content</label>
 					<textarea className="form-control" {...content} />
 					<div className="text-help">
-						{content.error}
+						{content.touched ? content.error : ''}
 					</div>
 				</div>
 
