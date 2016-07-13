@@ -1,13 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
 import { Link } from 'react-router';
 
 class PostNew extends Component {
+
+	//This is a helper by React, invoked whenever a new post is created. 
+	//Redirecting immediately after submitting. Router in index.js provides context.
+	//Avoid using context unless working with Router.
+	static contextTypes = {
+		router: PropTypes.object
+	};
+
+	onSubmit(props) {
+		this.props.createPost(props);
+	}
+
 	render() {
 		const { fields: { title, categories, content }, handleSubmit } = this.props;
 		return (
-			<form onSubmit={handleSubmit(this.props.createPost)}>
+			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 				<h4>Create a post</h4>
 				<div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
 					<label>Title</label>
