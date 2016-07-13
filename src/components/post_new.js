@@ -12,8 +12,15 @@ class PostNew extends Component {
 		router: PropTypes.object
 	};
 
+	//createPost returns a Promise as a payload
 	onSubmit(props) {
-		this.props.createPost(props);
+		this.props.createPost(props)
+		.then(() => { 
+		//blog post created, navigate to index.
+		//navigate by calling this.context.router.push 
+
+		this.context.router.push('/')
+		});
 	}
 
 	render() {
